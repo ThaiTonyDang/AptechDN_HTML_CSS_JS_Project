@@ -1,0 +1,58 @@
+[
+    {
+        "Id": "1",
+        "Name": "Mũi Hàn 500",
+        "Price": "25000",
+        "Count": "1",
+        "Image": "product_1.jpg"
+    } ,
+    {
+        "Id": "2",
+        "Name": "Trạm Hàn Hakko 942 75W Cực Nóng",
+        "Price": "1299000",
+        "Count": "1",
+        "Image": "product_2.jpg"
+    } ,
+    {
+        "Id": "3",
+        "Name": "Module DIY Sạc Không Dây Q",
+        "Price": "89000 đ",
+        "Count": "1",
+        "Image": "product_3.jpg"
+    } ,
+    {
+        "Id": "4",
+        "Name": "Bộ Điều Chỉnh Điện Áp CHLVFU SDTY-200P",
+        "Price": "2199000 đ",
+        "Count": "1",
+        "Image": "product_4.jpg"
+    } ,
+    {
+        "Id": "5",
+        "Name": "Module ISD1760",
+        "Price": "115000 đ",
+        "Count": "1",
+        "Image": "product_5.jpg"
+    },
+    {
+        "Id": "6",
+        "Name": "Máy Bơm Chìm Hộ Gia Đình QDX 1500W",
+        "Price": "1720000 đ",
+        "Count": "1",
+        "Image": "product_5.jpg"
+    },
+    {
+        "Id": "7",
+        "Name": "Module Nodemcu IOT ESP8266",
+        "Price": "129000 đ",
+        "Count": "1",
+        "Image": "product_5.jpg"
+    },
+    {
+        "Id": "8",
+        "Name": "Raspberry Pi 3 E14 Model B Plus B+",
+        "Price": "1400000 đ",
+        "Count": "1",
+        "Image": "product_5.jpg"
+    }
+]

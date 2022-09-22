@@ -1,28 +1,39 @@
-li {
+
+body {
+    width: 100%;
+    background-image: u;
+}
+ li {
     list-style: none;
   }
   
   /* header */
-  nav {
+nav {
     padding: 15px;
     width: 100%;
+    height: 4rem;
     display: flex;
-    background: #f1df11;
-  }
+    background: #cd1818;
+}
   
-  nav .nav__content {
+.img-nav {
+  margin-top: -15px;
+  margin-bottom: -4px;
+  margin-left: -15px;
+}
+nav .content-nav {
     display: flex;
     line-height: 2rem;
     flex-direction: row;
     justify-content: flex-end;
     width: 60%;
-  }
+}
   
-  nav .nav__content ul {
+  nav .content-nav ul {
     display: flex;
-  }
+}
   
-  nav .nav__content ul li a {
+  nav .content-nav ul li a {
     text-decoration: none;
     color: #43433e;
     text-transform: uppercase;
@@ -30,15 +41,15 @@ li {
     font-weight: 800;
   }
   
-  nav .nav__content ul li a:hover {
+  nav .content-nav ul li a:hover {
     color: #fff;
   }
   
-  .nav__content form {
+  .content-nav form {
     position: relative;
   }
   
-  .nav__content form input {
+  .content-nav form input {
     border: none;
     background: #fff;
     padding: 7px;
@@ -46,7 +57,7 @@ li {
     border-radius: 12px;
   }
   
-  .nav__content form button {
+  .content-nav form button {
     padding: 5px;
     border-radius: 12px;
     position: absolute;
@@ -58,121 +69,48 @@ li {
   }
   
   /* modal */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  
-  .modal-content {
-    margin: 0 auto;
-    width: 50%;
+  .cart { 
     position: relative;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, .2);
-    border-radius: .3rem;
-    outline: 0;
-  
-  }
-  
-  .modal-body {
-    padding: 1rem;
-  }
-  
-  .modal-footer {
-    display: flex;
-    border-top: 1px solid #aaaaaa;
-    padding: 1rem;
-    flex-direction: row;
-    justify-content: flex-end;
-    border-top: 1px solid #aaaaaa;
-    padding: 1rem;
-  }
-  
-  .modal-footer>:not(:first-child) {
-    margin-left: .25rem;
-  }
-  
-  .btn {
-    cursor: pointer;
-    outline: none;
-    font-weight: 400;
-    line-height: 1.25;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    border: 1px solid transparent;
-    padding: .5rem 1rem;
-    font-size: 1rem;
-    border-radius: .25rem;
-    transition: all .2s ease-in-out;
-  }
-  
-  .btn-secondary {
-    color: #292b2c;
-    background-color: #fff;
-    border-color: #ccc;
-  }
-  
-  .btn-primary {
-    color: #fff;
-    background-color: #0275d8;
-    border-color: #0275d8;
-  }
-  
-  .modal-header {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #aaaaaa;
-    padding: 1rem;
-  }
-  
-  h5.modal-title {
-    font-size: 1.5rem;
-  }
-  
-  .close {
-    color: #aaaaaa;
-    font-size: 28px;
-    font-weight: bold;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  #cart {
+    height: 150%;
     font-size: 15px;
     color: black;
-    background: #c7b200;
+    background: transparent;
     border: 1px solid transparent;
     border-radius: 10px;
-    outline: none;
+    margin-top: -10px;
     margin-left: 1rem;
     padding: 12px;
     cursor: pointer;
   }
   
-  #cart:hover {
-    border-color: #fff;
+  .cart:hover {
+    border-color: black;
+    background-color: white;
+  }
+   
+  .cart-number {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #f5a623;
+    right: 20px;
+    top: 0;
+    color: white;
+    text-align: center;
+  }
+
+  .fa-solid{
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 10px;
+    
+  }
+  .cart-text {
+    margin-top: 2px;
+    color: black;
   }
 
   /* wrapper */
@@ -213,7 +151,7 @@ li {
     margin: 0 0 5px;
   }
   
-  .content-product .content-product-deltals {
+  .content-product-deltals {
     display: flex;
     justify-content: center;
     padding-top: 1rem;
@@ -232,14 +170,15 @@ li {
   }
   
   .content-product .content-product-deltals .btn-cart {
-    background: #f1df11;
+    background: white;
     border-radius: 5px;
-    color: #fff;
-    font-weight: 500;
+    color: black;
+    font-weight: 700;
   }
   
   .content-product .content-product-deltals .btn-cart:hover {
-    background: #c7b200;
+    background: black;
+    color: white;
   }
   
   /* footer */
