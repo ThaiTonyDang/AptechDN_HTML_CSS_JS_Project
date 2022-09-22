@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    
+}
+.fs-header{
+    z-index: 100;
+    display: block;
+    font-size: 100%;
+    font-weight: 400;
+}
+.heading{
+    z-index: 100;
+    position: relative;
+    height: 56px;
+    background-color: #cd1818;
+
+}
+.f-wrap{
+    overflow: unset!;
+    z-index: unset;
+    width: 1200px;    
+    height: 100%;
+    max-width: 1200px;
+   position: relative;
+}
+.fs-logo{
+    margin-top:  10px;
+    margin-right: 55px;
+    float: left;
+    z-index: 10;
+    position: relative;
+    padding-left: 100px;
+}
+a{
+    color: #0168fa;
+    text-decoration: none;
+    background-color: transparent;
+    vertical-align: baseline;
+}
+i{
+    vertical-align: baseline;
+    background: 0 0;
+}
+.f-logo {
+    width: 153px;
+    height: 44px;
+    background-position: -2px -8px; 
+}
+.ficon{
+   display: inline-block;
+   background-repeat: no-repeat;
+   background-image: url(https://fptshop.com.vn/Content/v4/images/iconhd.png?v=3);
+}
+.list-information{
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+    display: flex;
+    list-style: none;
+    font-size: 100%;
+    font-weight: 400;
+    vertical-align: baseline;
+    width: 448px;
+    height: 56px;
+    padding-left: 80px;
+
+}
+i{
+    margin: 0;
+    vertical-align: baseline;
+    font-style: italic;
+}
+.fs-search{
+    float: left;
+    margin-top: 10px;
+}
+.fs-search form{
+    width: 496px;
+}
+.fs-search>form{
+    padding-left: 10px;
+    display: block;
+    position: relative;
+    z-index: 11;
+}
+.labelItem{
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+label{
+    cursor: pointer;
+}
+input{
+    padding: 0 0 0 16px;
+    border: none;
+    width: 100%;
+    height: 38px;
+    font-size: 14px;
+    background: #fff;
+    border-radius: 2px;
+    appearance: none;
+    vertical-align: middle;
+}
+.icon-X{
+    position: absolute;
+    z-index: 1;
+    color: #a2a2a2;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    padding-right: 68px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.search-button{
+    cursor: pointer;
+    width: 59px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    top: -1px;
+    right: 0;
+    border: none;
+    background-color: #331;
+    border-radius: 0 2px 2px 0;
+    overflow: visible;
+}
+.fs-search>form.search-button i{
+    color: #fff;
+    font-size: 20px;
+}
+.f-search{
+    width: 22px;
+    height: 22px;
+    background-position: -7px -87px;
+}
+.ficon{
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-image: url(https://fptshop.com.vn/Content/v4/images/iconhd.png?v=3);
+}
+.list-information>li:first-child{
+   margin-left: 0;
+}
+.list-information>li{
+    height: 56px;
+    line-height: 1;
+    padding-top: 5px;
+    margin-left: 23px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+    .iconBlock
+    {
+
+    height: 25px;
+}
+.font-color{
+    color: #fff;
+    line-height: 15px;
+    font-size: 14px;
+    display: block;
+    margin-top: 0px;
+}
+.ajust-tool{
+    line-height: 15px;
+}
+.fa-solid{
+    padding: 1px;  
+    color: black;
+}
+.fa-Icon{
+    width: 17px;
+    height: 17px;
+    padding: 1px;
+}
+.Information{
+    width: 84.11px;
+    cursor: pointer;  
+}
+.PayTools{
+    width: 130px;
+    cursor: pointer;
+}
+.Account{
+    width: 105.61px;
+    cursor: pointer;
+}
+
+
+
+

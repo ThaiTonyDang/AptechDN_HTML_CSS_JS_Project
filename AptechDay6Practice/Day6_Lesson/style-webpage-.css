@@ -1,0 +1,130 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+}
+.container {
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+}
+ 
+.class-header {
+    width: 100%;
+    height: 70px;
+
+}
+
+.image-search {
+    width: 50%;
+}
+.left-logo-class {
+    width: 20%;
+    height: 70px;
+    float: left;
+}
+
+.image-logo {
+    width: 130px;
+    height: 70px;
+}
+
+.mid-search-class {
+    width: 70%;
+    height: 70px;
+    float: right;
+}
+
+.right-infor-class {
+    display: flex;
+    width: 50%;
+    height: 70px;
+    position: absolute;
+    right: 50px;
+} 
+
+.list-infor {
+    list-style: none;
+    width: 100%;
+}
+
+.infor-class {
+    width: 20%;
+    background-color: #cd1818;
+    float: left;
+    height: 70px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+.infor-class:hover {
+    background-color: white;
+    color: black;
+}
+
+.fs-txt {
+    width: 80%;
+    height: 68px;
+    font-size: 18px;
+    margin-right: 120px;
+}
+
+.fs-second-class {
+    width: 200px;
+    height: 200px;
+    padding: 50px 20px;
+    list-style: none;
+    
+
+}
+
+.infor-class-second {
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    border: 1px solid black;
+    display: none;
+}
+.infor-class-second-link {
+    text-decoration: none;
+}
+
+.infor-class:hover>ul>li {
+    display: block;
+}
+
+.main {
+    width: 90%;
+    height: 500px;
+    margin: auto;
+}
+
+.item {
+    width: 100%;
+}
+
+.list-item {
+    list-style: none;
+    width: 100%;
+    background-color: pink;
+}
+
+.item {
+    width: 25%;
+    height: 200px;
+    background-color: white;
+    border: 1px solid black;
+    float: left;
+    margin-top: 20px;
+}
+
+
+

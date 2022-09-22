@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siêu Thị Trực Tuyến</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <nav class="navi">
+            <div class="navi__img">
+                <img class="navi__logo" src="./image/logo.png" alt="" />
+            </div>
+            <div class="navi__content">
+                <ul class="navi__information">
+                    <li><a class="navi__text" href="#">Trang Chủ</a></li>
+                    <li><a class="navi__text" href="#">Sản Phẩm</a></li>
+                    <li><a class="navi__text" href="#">Liên Hệ</a></li>
+                    <li><a class="navi__text" href="#">Giới Thiệu</a></li>
+                </ul>
+                <form class="navi__form">
+                    <input class="navi__input" type="text" name="search" placeholder="Tìm kiếm sản phẩm..." />
+                    <button class="navi__button" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
+            <!-- The Modal -->
+            <button id="cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Giỏ Hàng
+            </button>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Giỏ Hàng</h5>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="cart-row">
+                            <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                            <span class="cart-price cart-header cart-column">Giá</span>
+                            <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                        </div>
+                        <div class="cart-items">
+
+                        </div>
+                        <div class="cart-total">
+                            <strong class="cart-total-title">Tổng Cộng:</strong>
+                            <span class="cart-total-price">0VNĐ</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+                        <button type="button" class="btn btn-primary order">Thanh Toán</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="wrapper">
+        <div class="products">
+            <ul>
+                <li class="main-product">
+                    <div class="img-product">
+                        <img class="img-prd"
+                            src="https://bizweb.dktcdn.net/thumb/large/100/228/168/products/sualai.jpg?v=1573720306000"
+                            alt="">
+                    </div>
+                    <div class="content-product">
+                        <h3 class="content-product-h3">Mũi Hàn 500</h3>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                                <span class="money">25000đ</span>
+                            </div>
+                            <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                        </div>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer>
+        <div class="footer-item">
+            <div class="img-footer">
+                <img src="img/logo.png" alt="" />
+            </div>
+            <div class="social-footer">
+                <li><a target="_blank" href="https://www.facebook.com/thanhlongdev">
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    </a></li>
+                <li><a target="_blank" href="https://github.com/long1211">
+                        <i class="fa fa-github-square" aria-hidden="true"></i>
+                    </a></li>
+
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

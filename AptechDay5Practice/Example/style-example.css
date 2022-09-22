@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+   font-family: 'Montserrat', sans-serif;
+
+}
+
+.center {
+    text-align: center;
+}
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+table#table1 th {
+    background-color: black;
+    color: white;
+}
+table#table1 tr {
+    background-color: aqua;
+}
+table#table1 tr:nth-of-type(even){
+    background-color: blueviolet;
+}

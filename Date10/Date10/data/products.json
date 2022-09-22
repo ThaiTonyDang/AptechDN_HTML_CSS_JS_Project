@@ -1,0 +1,26 @@
+[
+    {
+        "Id": 1,
+        "ProductName": "Samsung Galaxy Z Flip4 5G",
+        "Price": "1000",
+        "Image": "product1.jpg"
+    },
+    {
+        "Id": 2,
+        "ProductName": "iPhone 11",
+        "Price": "500",
+        "Image": "product2.jpg"
+    },
+    {
+        "Id": 3,
+        "ProductName": "Xiaomi Redmi Note 11",
+        "Price": "200",
+        "Image": "product3.jpeg"
+    },
+    {
+        "Id": 4,
+        "ProductName": "Samsung Galaxy S22 Ultra 5G",
+        "Price": "1100",
+        "Image": "product4.jpg"
+    }
+]

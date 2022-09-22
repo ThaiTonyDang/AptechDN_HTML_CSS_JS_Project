@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100%;
+    }
+
+    .container {
+        width: 90%;
+        margin: 50px auto;
+    }
+
+    .container>.product-item {
+        width: 25%;
+        text-align: center;
+        background-color: rgb(153, 162, 159);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        float: left;
+        border: 2px solid white;
+    }
+
+    .product-item>h1 {
+        height: 80px;
+    }
+
+    .product-item>button {
+        padding: 5px 10px;
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .product-item>button:hover {
+        background-color: green;
+    }
+
+    .product-item strong {
+        color: red;
+    }
+
+    table {
+        width: 100%;
+        text-align: center;
+    }
+
+    table td {
+        border: 1px solid blue;
+    }
+
+    table th {
+        border: 1px solid blue;
+        font-weight: bold;
+    }
+</style>
+
+<body onload="loadData()">
+    <div class="container" id="product-items">
+
+    </div>
+
+    <div class="container">
+        <table>
+            <thead>
+                <th>Id</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                </th>
+            <tbody id="table-body">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    var listCartItems = [];
+    function loadData() {
+        var productList = [];
+        var stringDataFromLocalStorage = localStorage.getItem("product-items");
+        if (stringDataFromLocalStorage != null) {
+            productList = JSON.parse(stringDataFromLocalStorage);
+        }
+        else {
+            productList = InitData();
+        }
+
+        var productHtmlWrapper = document.getElementById("product-items");
+        productHtmlWrapper.innerHTML = "";
+        var stringHtml = "";
+        for (var i = 0; i < productList.length; i++) {
+            stringHtml +=
+                `
+                <div class="product-item">
+                    <img src="../images/${productList[i].Image}" width="90%" />
+                    <h1>${productList[i].ProductName}</h1>
+                    <p>Price: <strong>${productList[i].Price}$</strong></p>
+                    <button class="add-to-cart" data-id="${productList[i].Id}">Add To Cart</button>
+                </div>
+            `
+        }
+        productHtmlWrapper.innerHTML = stringHtml;
+        InitAddToCartEvent(productList);
+    }
+
+    function InitAddToCartEvent(productList) {
+        var addToCartBtns = document.getElementsByClassName("add-to-cart");
+        // for (var i = 0; i < addToCartBtns.length; i++) {
+        //     console.log(addToCartBtns[i]);
+        // }
+
+        Array.from(addToCartBtns).forEach(btn => {
+            btn.addEventListener("click", function () {
+                let id = btn.getAttribute("data-id");
+                for (let j = 0; j < productList.length; j++) {
+                    if (productList[j].Id == id) {
+                        if (listCartItems != null && listCartItems.length > 0) {
+                            var check = false;
+                            for (let k = 0; k < listCartItems.length; k++) {
+                                if (listCartItems[k].Id == id) {
+                                    check = true;
+                                    listCartItems[k].Quantity += 1;
+                                }
+                            }
+                        }
+                        if (!check) {
+                            let tableBody = document.getElementById("table-body");
+                            tableBody.innerHTML +=
+                                `
+                                    <tr>
+                                        <td>${productList[j].Id}</td>
+                                        <td>${productList[j].ProductName}</td>
+                                        <td>${productList[j].Price}</td>
+                                        <td id="quantity-${productList[j].Id}">${1}</td>
+                                        <td>${parseInt(productList[j].Price) * 1}</td>
+                                    </tr>
+                                `
+                            listCartItems.push(productList[j]);
+                        }
+                        else {
+                            let currentQuantity = parseInt(document.getElementById(`quantity-${id}`).innerHTML);
+                            document.getElementById(`quantity-${id}`).innerText = currentQuantity + 1;
+                        }
+
+                    }
+                }
+            });
+        });
+    }
+
+
+    function InitData() {
+        var stringData =
+            `
+        [
+            {
+                "Id": 1,
+                "ProductName": "Samsung Galaxy Z Flip4 5G",
+                "Price": "1000",
+                "Image": "product1.jpg",
+                "Quantity": 1
+            },
+            {
+                "Id": 2,
+                "ProductName": "iPhone 11",
+                "Price": "500",
+                "Image": "product2.jpg",
+                "Quantity": 1
+            },
+            {
+                "Id": 3,
+                "ProductName": "Xiaomi Redmi Note 11",
+                "Price": "200",
+                "Image": "product3.jpeg",
+                "Quantity": 1
+            },
+            {
+                "Id": 4,
+                "ProductName": "Samsung Galaxy S22 Ultra 5G",
+                "Price": "1100",
+                "Image": "product4.jpg",
+                "Quantity": 1
+            }  
+        ]`
+
+        localStorage.setItem("product-items", stringData);
+        return JSON.parse(stringData);
+    }
+</script>
+
+</html>

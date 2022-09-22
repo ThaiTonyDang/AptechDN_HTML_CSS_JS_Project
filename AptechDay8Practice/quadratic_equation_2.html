@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equation Level 2</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Roboto:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./quadratics_equation.css">
+</head>
+<body>
+    <div class="contain">
+        <div class="top-item">
+            <div class="wrap">
+                <input class="number" type="text" name="number" id="numA" 
+                placeholder="Nhập số A"> X <sup>2</sup> + 
+                <input class="number" type="text" name="number" id="numB" 
+                placeholder="Nhập số B"> X  +
+                <input class="number" type="text" name="number" id="numC" 
+                placeholder="Nhập số C"> X  = 0
+                 
+            </div>
+        </div>
+        <div class="bottom-item">
+                <div class="wrap-2">
+                    <button type="button" class="button" id="button"
+                     value = "Giải" style ="color: green; 
+                     width: 100px;height: 50px;" onclick="Equation()" >
+                     <input type="text" name="rerult " id="result" style ="width: 420px;height: 50px; color: black;">
+                </div>
+        </div>
+    </div>
+</body>
+<script src="./day8.js"></script>
+</html>

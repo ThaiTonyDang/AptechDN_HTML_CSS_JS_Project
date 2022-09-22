@@ -1,0 +1,41 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+body {
+    width: 100%;
+}
+table, th, td {
+    margin-top: 30px;
+    border: 0.5px double;
+}
+
+.table-one {
+      width: 40%;
+      margin: 50px auto;
+}
+.row-item {
+    height: 40px;
+
+}
+.row-item-address {
+    height: 40px;
+}
+.input-box[type=text] {
+   width: 80%;
+   height: 25px;
+   margin-left: 15px;
+}
+#male {
+    margin-left: 20px;
+}
+.register-color-center { 
+    font-size: 30px;   
+    display: block;
+    background-image: linear-gradient(to right bottom , yellow,blue);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+   
+}

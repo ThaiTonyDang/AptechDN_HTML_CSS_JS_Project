@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+}
+.container {
+    width: 100%;
+    height: 537px;
+    background-color: #1e90ff;
+}
+.right-side {
+     width: 50%;
+     height: 537px;
+     float: left;
+}
+.left-side {
+    width: 50%;
+    height: 537px;
+    float: right;
+    margin-left: -20px;
+}
+.title-side {
+    height: 30%;
+    color: white;
+    padding-top: 15%;
+}
+.under-side {
+    height: 70%;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.above-side {
+    text-align: center;  
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 486c0e4c58c81c00245fb1c4b9c04096d626acd7
+}

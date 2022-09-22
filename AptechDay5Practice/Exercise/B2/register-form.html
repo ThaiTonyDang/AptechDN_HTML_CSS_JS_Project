@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Đăng Ký Thành Viên</title>
+    <link rel="stylesheet" href="./register-form-css.css" />
+  </head>
+  <body>
+    <form action="">
+      <table class="table-one">
+        <tr>
+          <th style="height: 40px" colspan="2">FORM ĐĂNG KÝ THÀNH VIÊN</th>
+        </tr>
+
+        <tr class="row-item">
+          <th class="item" width="20%">Họ và tên</th>
+          <td>
+            <input
+              class="input-box"
+              type="text"
+              name="fullname"
+              size="=30"
+              placeholder="Nhập tên đăng nhập"
+              onfocus="showButton()"
+            />
+          </td>
+        </tr>
+
+        <tr class="row-item">
+          <th class="item">Giới tính</th>
+          <td>
+            <input type="radio" name="sex" id="male" /> Nam
+            <input type="radio" name="sex" id="female" /> Nữ
+          </td>
+        </tr>
+
+        <tr class="row-item">
+          <th class="item">Email</th>
+          <td>
+            <input
+              class="input-box"
+              type="text"
+              name="fullname"
+              size="=30"
+              placeholder="Nhập Email"
+            />
+          </td>
+        </tr>
+
+        <tr class="row-item">
+          <th>Password</th>
+          <td>
+            <input
+              class="input-box"
+              type="password"
+              name="fullname"
+              size="=30"
+              placeholder="Nhập mật khẩu"
+              style="width: 80%; height: 25px; margin-left: 10px"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <th>Địa chỉ</th>
+          <td></td>
+        </tr>
+
+        <tr>
+          <th>Quốc gia</th>
+          <td></td>
+        </tr>
+
+        <tr>
+          <th>Ngoại ngữ</th>
+          <td></td>
+        </tr>
+
+        <tr>
+          <th>Sở thích</th>
+          <td></td>
+        </tr>
+
+        <tr>
+          <th>Giới thiệu bản thân</th>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>
+            <button type="button" id="btnLogin">Login</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script>
+      var abc = "10";
+      var test = abc - 2;
+      console.log(test);
+      console.log(typeof(abc));
+    </script>
+  </body>
+</html>

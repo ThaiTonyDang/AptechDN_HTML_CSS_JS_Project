@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-size: 1.6rem;
+    background-color: rgba(0, 0, 0, 0.319);
+    position: relative;
+}
+
+.contain {
+    width: 50%;
+    height: 30%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+}
+
+.top-item {
+    width: 100%;
+    height: 50%;
+    background-color: black;
+    position: relative;
+}
+
+.bottom-item {
+    height: 50%;
+    
+}
+
+.wrap {
+    color: white;
+    padding: 50px auto;
+    
+}
+
+.number {
+    width: 150px;
+    height: 30px;
+}
+
+#result {
+    margin-left: 110px;
+}
+
+
+
+
+
+
+
+
+
+
