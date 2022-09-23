@@ -32,7 +32,42 @@
             <!-- The CART -->
             <div class="cart">
                 <i class="fa-solid fa-circle-info"></i>
-                <p class="cart-text">Thông Tin Hay</p>
+                <p class="cart-text">Thông Tin Hay
+                   <ul class="information">
+                    <li class="infor-list">Tin Mới
+                        <ul class="list-child">
+                            <li class="infor-list-child">Thông số mới</li>
+                            <li class="infor-list-child">Hãng sản xuất</li>
+                            <li class="infor-list-child">Đặc điểm kỹ thuật</li>
+                            <li class="infor-list-child">Công nghệ mới</li>
+                            <li class="infor-list-child">Cập nhật</li>
+                        </ul>
+                    </li>
+                    <li class="infor-list">Khuyến Mãi
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </li>
+                    <li class="infor-list">Thủ Thuật
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </li>
+                    <li class="infor-list">Video Hướng Dẫn
+                        <ul>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </li>
+                    <li class="infor-list">Tư Vấn</li>
+                    <li class="infor-list">Sự Kiện</li>
+                   </ul>
+                </p>
             </div>
             <div class="cart">
                 <i class="fa-solid fa-money-check-dollar"></i>
@@ -42,11 +77,11 @@
                 <i class="fa-solid fa-user"></i>
                 <p class="cart-text">Tài Khoản Của Tôi</p>
             </div>
-            <div class="cart">
+            <button type="button" class="cart" >
                 <i class="fa-solid fa-cart-shopping"></i>
                 <p class="cart-text">Giỏ Hàng</p>
-                <div class="cart-number" id="cart__item-number"></div>
-            </div>      
+                <div class="cart-number opacity hidden" id="cart__item-number"></div>
+            </button>     
         </nav>
     </header>
     <section class="wrapper">
@@ -56,8 +91,28 @@
             </ul>
         </div>
     </section>
+
     <!-- footer -->
     <footer>
+        <div class="container">
+            <table class="table" style="width: 100%; margin-bottom: auto;"  >
+                <tr>
+                    <th class="title-head" colspan="6"
+                     style="background-color: green; color: azure;">Inventory</th>
+                </tr>
+                <tr>
+                <th class="title-head" >Id</th>
+                <th class="title-head" >Image</th>
+                <th class="title-head" >Product Name</th>
+                <th class="title-head" >Price</th>
+                <th class="title-head" >Quantity</th>
+                <th class="title-head" >Total</th>
+                </tr>
+                <tbody class="table table-body" id="table-body">
+                   
+                </tbody>
+            </table>
+        </div>
         <div class="footer-item">
             <div class="img-footer">
                 <img src="" alt="" />
