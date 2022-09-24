@@ -1,7 +1,5 @@
 var cartArray = [];
 var pQuality = 1;
-var qualityNumberList =  [];
-
 function Data() {
   var strgData = `
     [
@@ -85,9 +83,10 @@ function renderData() {
   render.innerHTML = "";
   var itemHtml = "";
   for (var i = 0; i < productArray.length; i++) {
-    var priceFormat = 
-    parseInt(productArray[i].Price).toLocaleString
-    ('it-IT', {style : 'currency', currency : 'VND'});
+    var priceFormat = parseInt(productArray[i].Price).toLocaleString("it-IT", {
+      style: "currency",
+      currency: "VND",
+    });
 
     itemHtml += `
             <li class="main-product">
@@ -102,11 +101,15 @@ function renderData() {
                             <div class="price">
                                 <span class="money">${priceFormat}</span>
                             </div>
-                            <button type="button" class="btn btn-cart" onclick="addToCartAndCalculator(${productArray[i].Id})">ADD TO CART</button>
+                            <button type="button" class="btn btn-cart" 
+                            onclick="addToCartAndCalculator(${productArray[i].Id})">ADD TO CART</button>
                         </div>
                     </div>
             </li>
         `;
+
+    reRenderCartData(); // re-Draw table cart
+    calcartQuality();
   }
   render.innerHTML = itemHtml;
 }
@@ -119,10 +122,9 @@ function addToCart(id) {
       if (cartArray && cartArray.length > 0) {
         for (var j = 0; j < cartArray.length; j++) {
           if (cartArray[j].Id == id) {
-            isProductExist = true; 
-            cartArray[j].Quality  += 1 ;
-           
-          }                  
+            isProductExist = true;
+            cartArray[j].Quality += 1;
+          }
           pQuality = cartArray[j].Quality;
         }
       }
@@ -133,71 +135,127 @@ function addToCart(id) {
   }
 }
 
-function updateQualityProduct() 
-{
-  for(var i = 0; i <  cartArray.length; i++)
-  {
-      var product = cartArray[i];
-      pQuatily = product.Quality;
-  }
-
-  console.log(pQuatily);
-}
-
 function calcartQuality() {
+  hiddenVisibilityCart();
   var cartQuality = cartArray.length;
   document.getElementById("cart__item-number").innerText = cartQuality;
 }
 
-function rendToInventory(id) {
+function rendToInventory() {
   let render = document.getElementById("table-body");
   render.innerHTML = "";
   let productRender = "";
   for (let i = 0; i < cartArray.length; i++) {
-    
-    var priceFormat = 
-    parseInt(cartArray[i].Price).toLocaleString
-    ('it-IT', {style : 'currency', currency : 'VND'});
+    var priceFormat = parseInt(cartArray[i].Price).toLocaleString("it-IT", {
+      style: "currency",
+      currency: "VND",
+    });
 
     var totalFormat = parseInt(cartArray[i].Price * cartArray[i].Quality);
 
-    totalFormat = 
-    totalFormat.toLocaleString
-    ('it-IT', {style : 'currency', currency : 'VND'});
+    totalFormat = totalFormat.toLocaleString("it-IT", {
+      style: "currency",
+      currency: "VND",
+    });
 
     productRender += ` 
        <tr style="text-align: center;vertical-align: center;">
-           <td  >${cartArray[i].Id}</td>
-           <td> <img style = "width: 4rem; height: 4rem;" src="./image/${
-             cartArray[i].Image
-           }" alt=""></td>
-           <td>${cartArray[i].Name}</td>
+           <td class = "product-id">${i+1}</td>
+           <td class = "product-img"> 
+           <img style = "width: 4rem; height: 4rem;" src="./image/${cartArray[i].Image}" alt="">
+           <p>Id sản phẩm : ${cartArray[i].Id}</p> 
+           </td>
+           <td>${cartArray[i].Name}
+           </td>
            <td >${priceFormat}</td>
            <td >${cartArray[i].Quality} </td>
-           <td >${totalFormat}</td> 
-        </tr>
-        <tr>
-           <td colspan="5" style="font-weight: bold; text-align: center;" >
-                  Thành Tiền  
-           </td>
-           <td>
-
-           </td>
-           
-        </tr>
+           <td class= "total-price">${totalFormat}
+           <button class="delete-button" onclick="removeProduct(${cartArray[i].Id})" > Xóa Sản Phẩm</button>
+           </td> 
+        </tr>   
       `;
+    setCartDataToLocalStorage(); // save data into localStorage
   }
   render.innerHTML = productRender;
+  
+  if(cartArray.length>0)
+  {
+    var sum = sumTotal();
+  var sumHTML = document.getElementById("table-foot");
+  sumHTML.innerHTML = "";
+  var strgData = "";
+  strgData = `
+  <tr class ="total" >
+        <td colspan="5" 
+            style="font-weight: bold; text-align: center; background-color: yellow;" >
+            Thành Tiền  
+        </td>
+        <td style=
+            "font-weight: bold; text-align: center;background-color: red;">
+            ${sum}
+        </td>  
+  </tr>
+  `;
+  sumHTML.innerHTML=strgData;
+  }
+  
 }
 
-function visibilityCart() {
-  document.getElementById("cart__item-number").style.opacity = "1";
-  document.getElementById("cart__item-number").style.visibility = "visible";
+function removeProduct(id) {
+   for(var i =0 ; i< cartArray.length ; i++)
+   {
+       if(cartArray[i].Id == id)
+       {
+        cartArray.splice(i,1);
+       }
+   }
+   setCartDataToLocalStorage();
+   reRenderCartData();
+   calcartQuality();
+}
+
+function sumTotal() {
+  var sum = 0;
+  for (var i = 0; i < cartArray.length; i++) {
+    sum += parseInt(cartArray[i].Price * cartArray[i].Quality);
+  }
+  return sum.toLocaleString("it-IT", {
+    style: "currency",
+    currency: "VND",
+  });
+}
+
+function setCartDataToLocalStorage() {
+  var strgCartData = JSON.stringify(cartArray);
+  localStorage.setItem("saveData", strgCartData);
+}
+
+function getCartData() {
+  var getCartDataFromLocalStorage = localStorage.getItem("saveData");
+  if (getCartDataFromLocalStorage != null) {
+    cartArray = JSON.parse(getCartDataFromLocalStorage);
+  }
+
+  return cartArray;
+}
+
+function reRenderCartData() {
+  cartArray = getCartData();
+  rendToInventory();
+}
+
+function hiddenVisibilityCart() {
+  if (cartArray.length <= 0) {
+    document.getElementById("cart__item-number").style.opacity = "0";
+    document.getElementById("cart__item-number").style.visibility = "hidden";
+  } else {
+    document.getElementById("cart__item-number").style.opacity = "1";
+    document.getElementById("cart__item-number").style.visibility = "visible";
+  }
 }
 
 function addToCartAndCalculator(id) {
   addToCart(id);
   calcartQuality();
-  visibilityCart();
-  rendToInventory(id);
+  rendToInventory();
 }
