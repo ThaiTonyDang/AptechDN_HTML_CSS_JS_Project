@@ -3,7 +3,7 @@
         "Id": "1",
         "Name": "Mũi Hàn 500",
         "Price": 25000,
-        "Count": "1",
+        "Count": 1,
         "Image": "product_1.jpg"
     } ,
     {
