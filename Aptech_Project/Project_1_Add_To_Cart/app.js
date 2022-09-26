@@ -1,6 +1,6 @@
 var cartArray = [];
-var pQuality = 1;
-function Data() {
+
+function loadData() {
   var strgData = `
     [
         {
@@ -65,74 +65,98 @@ function Data() {
   return JSON.parse(strgData);
 }
 
-function dataLoading() {
-  var productArray = [];
-  var getDataFromStorage = sessionStorage.getItem("stringList");
-  if (getDataFromStorage != null) {
-    productArray = JSON.parse(getDataFromStorage);
-  } else {
-    productArray = Data();
-  }
-
-  return productArray;
+function getDataFromStorage() {
+  var data = sessionStorage.getItem("stringList");
+  if (data)
+    return JSON.parse(data);
+  return loadData();
 }
 
-function renderData() {
-  var productArray = dataLoading();
+function getRenderProductItem(product) {
+  var priceFormat = parseInt(product.Price).toLocaleString("it-IT", {
+    style: "currency",
+    currency: "VND",
+  });
+
+  let itemHtml = `
+          <li class="main-product">
+                  <div class="img-product">
+                      <img class="img-prd"
+                          src="./image/${product.Image}"
+                          alt="">
+                  </div>
+                  <div class="content-product">
+                      <h3 class="content-product-h3">${product.Name}</h3>
+                      <div class="content-product-deltals">
+                          <div class="price">
+                              <span class="money">${priceFormat}</span>
+                          </div>
+                          <button type="button" class="btn btn-cart" 
+                          onclick="addToCartAndCalculator(${product.Id})">ADD TO CART</button>
+                      </div>
+                  </div>
+          </li>
+      `;
+
+  reRenderCartData(); // re-Draw table cart
+  calcartQuality();
+
+  return itemHtml;
+}
+
+function renderListProduct() {
+  var productArray = getDataFromStorage();
   var render = document.getElementById("items");
-  render.innerHTML = "";
   var itemHtml = "";
-  for (var i = 0; i < productArray.length; i++) {
-    var priceFormat = parseInt(productArray[i].Price).toLocaleString("it-IT", {
-      style: "currency",
-      currency: "VND",
-    });
-
-    itemHtml += `
-            <li class="main-product">
-                    <div class="img-product">
-                        <img class="img-prd"
-                            src="./image/${productArray[i].Image}"
-                            alt="">
-                    </div>
-                    <div class="content-product">
-                        <h3 class="content-product-h3">${productArray[i].Name}</h3>
-                        <div class="content-product-deltals">
-                            <div class="price">
-                                <span class="money">${priceFormat}</span>
-                            </div>
-                            <button type="button" class="btn btn-cart" 
-                            onclick="addToCartAndCalculator(${productArray[i].Id})">ADD TO CART</button>
-                        </div>
-                    </div>
-            </li>
-        `;
-
-    reRenderCartData(); // re-Draw table cart
-    calcartQuality();
-  }
+  productArray.forEach(product => {
+    let productHtml = getRenderProductItem(product);
+    itemHtml += productHtml;
+  });
+  
   render.innerHTML = itemHtml;
 }
 
 function addToCart(id) {
-  var productArray = dataLoading();
-  for (var i = 0; i < productArray.length; i++) {
-    if (productArray[i].Id == id) {
-      let isProductExist = false;
-      if (cartArray && cartArray.length > 0) {
-        for (var j = 0; j < cartArray.length; j++) {
-          if (cartArray[j].Id == id) {
-            isProductExist = true;
-            cartArray[j].Quality += 1;
-          }
-          pQuality = cartArray[j].Quality;
-        }
-      }
-      if (!isProductExist) {
-        cartArray.push(productArray[i]);
-      }
+  var productArray = getDataFromStorage();
+  // for (var i = 0; i < productArray.length; i++) {
+  //   if (productArray[i].Id == id) { // tim product ton tai trong productArr
+  //     let isProductExist = false;
+  //     if (cartArray && cartArray.length > 0) {
+  //       for (var j = 0; j < cartArray.length; j++) {
+  //         if (cartArray[j].Id == id) { // tim product ton tai trong cart
+  //           isProductExist = true;
+  //           cartArray[j].Quality += 1;
+  //         }
+  //       }
+  //     }
+  //     if (!isProductExist) {
+  //       cartArray.push(productArray[i]);
+  //     }
+  //   }
+  // }
+
+  var product = getProductById(productArray, id);
+
+  if(product) {
+    var productCart = getProductCartById(id);
+    if(productCart) {
+      productCart.Quality += 1; 
+      return;
     }
+
+    cartArray.push(product);
   }
+  
+}
+
+function getProductById(productArr, id) {
+  var product = productArr.find(item => item.Id == id);
+  return product;
+}
+
+function getProductCartById(id) {
+  var product = cartArray.find(item => item.Id == id);
+  return product;
 }
 
 function calcartQuality() {
@@ -141,64 +165,75 @@ function calcartQuality() {
   document.getElementById("cart__item-number").innerText = cartQuality;
 }
 
-function rendToInventory() {
-  let render = document.getElementById("table-body");
-  render.innerHTML = "";
-  let productRender = "";
-  for (let i = 0; i < cartArray.length; i++) {
-    var priceFormat = parseInt(cartArray[i].Price).toLocaleString("it-IT", {
+function inventoryRendingItem(cartItem) {
+    var priceFormat = parseInt(cartItem.Price).toLocaleString("it-IT", {
       style: "currency",
       currency: "VND",
     });
 
-    var totalFormat = parseInt(cartArray[i].Price * cartArray[i].Quality);
+    var totalFormat = parseInt(cartItem.Price * cartItem.Quality);
 
     totalFormat = totalFormat.toLocaleString("it-IT", {
       style: "currency",
       currency: "VND",
     });
 
-    productRender += ` 
+    var productRender = ` 
        <tr style="text-align: center;vertical-align: center;">
-           <td class = "product-id">${i+1}</td>
+           <td class = "product-id">${cartArray.indexOf(cartItem)+1}</td>
            <td class = "product-img"> 
-           <img style = "width: 4rem; height: 4rem;" src="./image/${cartArray[i].Image}" alt="">
-           <p>Id sản phẩm : ${cartArray[i].Id}</p> 
+           <img style = "width: 4rem; height: 4rem;" src="./image/${cartItem.Image}" alt="">
+           <p>Id sản phẩm : ${cartItem.Id}</p> 
            </td>
-           <td>${cartArray[i].Name}
+           <td>${cartItem.Name}
            </td>
            <td >${priceFormat}</td>
-           <td >${cartArray[i].Quality} </td>
+           <td >${cartItem.Quality} </td>
            <td class= "total-price">${totalFormat}
-           <button class="delete-button" onclick="removeProduct(${cartArray[i].Id})" > Xóa Sản Phẩm</button>
+           <button class="delete-button" onclick="removeProduct(${cartItem.Id})" > Xóa Sản Phẩm</button>
            </td> 
         </tr>   
       `;
-    setCartDataToLocalStorage(); // save data into localStorage
-  }
-  render.innerHTML = productRender;
-  
-  if(cartArray.length>0)
-  {
-    var sum = sumTotal();
+    setCartDataToLocalStorage();
+    return productRender;
+}
+
+function rendSumtoTable() {
   var sumHTML = document.getElementById("table-foot");
-  sumHTML.innerHTML = "";
-  var strgData = "";
-  strgData = `
-  <tr class ="total" >
-        <td colspan="5" 
-            style="font-weight: bold; text-align: center; background-color: yellow;" >
-            Thành Tiền  
-        </td>
-        <td style=
-            "font-weight: bold; text-align: center;background-color: red;">
-            ${sum}
-        </td>  
-  </tr>
-  `;
-  sumHTML.innerHTML=strgData;
+  sumHTML.innerHTML = ""; // Initial value is empty -- will return here when cleared
+
+  if(cartArray.length > 0)
+  {
+    var sumHTML = document.getElementById("table-foot");
+    sumHTML.innerHTML = "";
+    var sum = sumTotal();
+    var strgData = "";
+    strgData = `
+    <tr class ="total" >
+          <td colspan="5" 
+              style="font-weight: bold; text-align: center; background-color: yellow;" >
+              Thành Tiền  
+          </td>
+          <td style=
+              "font-weight: bold; text-align: center;background-color: red;">
+              ${sum}
+          </td>  
+    </tr>
+    `;
+    sumHTML.innerHTML = strgData;
   }
+}
+
+function rendDataToInventory() {
+  let render = document.getElementById("table-body");
+  let productRender = "";
   
+  cartArray.forEach(cartItem => {
+    let rentProductHTML = inventoryRendingItem(cartItem);
+    productRender += rentProductHTML;
+  });
+  render.innerHTML = productRender;
+  rendSumtoTable();
 }
 
 function removeProduct(id) {
@@ -241,7 +276,7 @@ function getCartData() {
 
 function reRenderCartData() {
   cartArray = getCartData();
-  rendToInventory();
+  rendDataToInventory();
 }
 
 function hiddenVisibilityCart() {
@@ -257,5 +292,5 @@ function hiddenVisibilityCart() {
 function addToCartAndCalculator(id) {
   addToCart(id);
   calcartQuality();
-  rendToInventory();
+  rendDataToInventory();
 }
