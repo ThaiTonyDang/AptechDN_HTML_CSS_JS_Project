@@ -110,3 +110,28 @@ body {
 
 
 
+.card-img-top:hover {
+   cursor: pointer;
+   border: 3px solid #001489;
+   margin-left: 10px;
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.product-type {
+    --c: no-repeat linear-gradient(#001489 0 0);
+    background: 
+      var(--c) calc(-100% + var(--i, 0) * 100%) 100% / 50% calc(100% * var(--i, 0) + .08em),
+      var(--c) calc( 200% - var(--i, 0) * 100%) 0 / 50% calc(100% * var(--i, 0) + .08em);
+    transition: .3s calc(var(--i, 0) * .3s), background-position .3s calc(.3s - var(--i, 0) * .3s);
+}
+
+.product-type:hover {
+    --i: 1;
+    color: white;
+}
+
+
+
