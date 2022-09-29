@@ -1,0 +1,111 @@
+[
+    {
+       "Id": 1,
+       "Type": 0, 
+       "ProductName": "Bình giữ nhiệt cao cấp Chelsea",
+       "Price": 80000,
+       "OriginalPrice": 160000,
+       "Quantity": 1,
+       "Image": "binhnuoc.png"
+
+    },
+    {
+        "Id": 2,
+       "Type": 1, 
+       "ProductName": "Balo Chelsea",
+       "Price": 250000,
+       "OriginalPrice": 350000,
+       "Quantity": 1,
+       "Image": "balo.jpg"
+    },
+    {
+        "Id": 3,
+        "Type": 2, 
+        "ProductName": "Ví Chelsea",
+        "Price": 250000,
+        "OriginalPrice": 350000,
+        "Quantity": 1,
+        "Image": "bopvi.png"
+    },
+    {
+        "Id": 4,
+        "Type": 3, 
+        "ProductName": "Áo Nữ Chelsea",
+        "Price": 1500000,
+        "OriginalPrice": 2500000,
+        "Quantity": 1,
+        "Image": "chelsea-clothes.jpg"
+    },
+    {
+        "Id": 5,
+        "Type": 3, 
+        "ProductName": "Áo Mùa Đông Nữ Chelsea",
+        "Price": 2000000,
+        "OriginalPrice": 3500000,
+        "Quantity": 1,
+        "Image": "winter-chelsea-clothes.jpg"
+    },
+    {
+        "Id": 6,
+        "Type": 0, 
+        "ProductName": "Đồng Hồ Đeo Tay Chelsea",
+        "Price": 250000,
+        "OriginalPrice": 300000,
+        "Quantity": 1,
+        "Image": "dongho_3.png"
+    },
+    {
+        "Id": 7,
+        "Type": 1, 
+        "ProductName": "Ga Giường Chelsea",
+        "Price": 800000,
+        "OriginalPrice": 1500000,
+        "Quantity": 1,
+        "Image": "gagiuong.jpg"
+    },
+    {
+        "Id": 8,
+        "Type": 2, 
+        "ProductName": "Khăn Choàng Len Chelsea",
+        "Price": 200000,
+        "OriginalPrice": 350000,
+        "Quantity": 1,
+        "Image": "khanchoanglen.png"
+    },
+    {
+        "Id": 9,
+        "Type": 2, 
+        "ProductName": "Đồng Hồ Đeo Tay",
+        "Price": 100000,
+        "OriginalPrice": 250000,
+        "Quantity": 1,
+        "Image": "dongho_2.jpg"
+    },
+    {
+        "Id": 10,
+        "Type": 0, 
+        "ProductName": "Áo Mùa Đông Nam",
+        "Price": 2000000,
+        "OriginalPrice": 3500000,
+        "Quantity": 1,
+        "Image": "black-mens.jpg"
+    },
+    {
+        "Id": 11,
+        "Type": 3, 
+        "ProductName": "Tượng Timo Werner",
+        "Price": 400000,
+        "OriginalPrice": 550000,
+        "Quantity": 1,
+        "Image": "chelsea-werner-bobblehead.jpg"
+    },
+    {
+        "Id": 12,
+        "Type": 1, 
+        "ProductName": "Đèn Bàn Chelsea",
+        "Price": 500000,
+        "OriginalPrice": 700000,
+        "Quantity": 1,
+        "Image": "chelsea-lamp.jpg"
+    }
+]

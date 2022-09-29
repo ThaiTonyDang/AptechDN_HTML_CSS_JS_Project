@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chelsea FC The Offical Online Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style_boostrap.css">
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body onload="loadDataProductToHTML()">
+  
+    <nav class="navbar navbar-expand-lg navbar-light bg-light nav-fixed">
+      <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="#!">Lưu Niệm Của Câu Lạc Bộ</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#!">Trang Chủ</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#!">Giới Thiệu</a></li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                id="navbarDropdown"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Cửa Hàng</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#!">All ProDuct</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#!">Mặt Hàng Phổ Biến</a></li>
+                <li><a class="dropdown-item" href="#!">Điểm Tin</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex cart ">
+            <a href="./cart.html" target="_blank" class="cart btn btn-outline-dark " type="submit">
+              <i class="bi-cart-fill me-1 cart-icon"></i>
+              <div class="cart-number opacity hidden" id="cart__item-number"></div>
+            </a>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <header class="bg-dark py-5 nav-header">
+      <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+          <img class="chelsea-logo" src="../image/__0-381955508188.4153.svg" alt="">
+          <!-- <p class="lead fw-normal text-white-50 mb-0">
+            THE OFFICIAL ONLINE STORE
+          </p> -->
+        </div>
+        <nav class="navbar bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand">CHELSEA STORE SEARCH</a>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2 input-search" type="search" placeholder="Nhập Sản Phẩm Cần Tìm" aria-label="Search">
+              <button class="btn btn-outline-success btn-search"  type="submit" ><i class="bi bi-binoculars-fill"></i></button>
+            </form>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- Section-->
+    <section class="py-5">
+      <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="list-product">
+          <!--  Rend here-->
+        
+        </div>
+      </div>
+    </section>
+    <!-- Footer-->
+    <footer class="py-5 bg-dark background-footer">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          <a class="link-page" href="https://www.chelseafc.com/en">Copyright &copy; Chelsea FootBall </a> 
+        </p>
+      </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="../scripts/consts.js"></script>
+    <script src="../scripts/app.js" ></script>
+    
+  </body>
+</html>
