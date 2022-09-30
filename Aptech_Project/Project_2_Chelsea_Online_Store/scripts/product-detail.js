@@ -9,6 +9,8 @@ function getIdFromDetailPage() {
 function loadProductDetail() {
   let id = getIdFromDetailPage();
   let product = getProductById(id);
+  let cart = getCartFromStorage(); 
+  getCartNumber(cart);
   setImage(product);
   setTextName(product);
   setProductPrice(product);
@@ -83,6 +85,7 @@ function pushProductToCart(cart) {
 function addProductToCart() {
   let cart = getCartFromStorage();
   pushProductToCart(cart);
+  
   saveCart(cart);
 }
 
@@ -99,4 +102,24 @@ function getCartFromStorage() {
   let cart = localStorage.getItem("cartItem");
   if (cart) return JSON.parse(cart);
   return [];
+}
+
+function hiddenVisibleCartNumber() {
+  let cart = getCartFromStorage(); 
+  if (cart) {
+    document.getElementById("cart__item-number").style.opacity = "1";
+    document.getElementById("cart__item-number").style.visibility = "visible";
+  } else {
+    document.getElementById("cart__item-number").style.opacity = "0";
+    document.getElementById("cart__item-number").style.visibility = "hidden";
+  }
+}
+
+function getCartNumber(cart) {
+  hiddenVisibleCartNumber();
+  let result = document.getElementById("cart__item-number");
+  result.innerText = "";
+  if (cart) {
+    result.innerText = parseInt(cart.length);
+  }
 }

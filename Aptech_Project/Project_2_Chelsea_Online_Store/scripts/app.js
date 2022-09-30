@@ -146,10 +146,10 @@ function addProductToCart(id) {
       return;
     }
 
-    if (cartArray) {
+    if (cartArray==null) {
       cartArray = [];
-      
     }
+    
     cartArray.push(product);
     
   }
@@ -161,7 +161,7 @@ function saveCart() {
 
 function hiddenVisibleCartNumber() {
   cartArray = getDataCartFromStorage();
-  if (cartArray) {
+  if (cartArray && cartArray.length > 0) {
     document.getElementById("cart__item-number").style.opacity = "1";
     document.getElementById("cart__item-number").style.visibility = "visible";
   } else {

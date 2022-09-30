@@ -26,41 +26,30 @@
     />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style_boostrap.css">
+    <link rel="stylesheet" href="../css/cart.css">
      
-    <style>
-    .table, tr, th,td 
-    {
-    border: 0.5px solid ;
-    font-weight: 500;
-    text-align: center;
-    vertical-align: center;
-    }
-
-    .image-table {
-        height: 100px;
-    }
-    </style>
 </head>
 <body onload="rendToCart()">
-    <table class="table table-hover" border="1">
-        <thead class="table-dark" >
-          <tr>
-            <th scope="col">Số Thứ Tự</th>
-            <th scope="col">Tên Sản Phẩm</th>
-            <th scope="col">Ảnh Sản Phẩm</th>
-            <th scope="col">ID</th>
-            <th scope="col">Giá Gốc</th>
-            <th scope="col">Giá Sale</th>
-            <th scope="col">Số Lượng</th>
-            <th scope="col">Giá Sản Phẩm</th>
+    <table class="table table-hover ">
+        <thead class="table-dark " >
+          <tr >
+            <th class="th-product" scope="col">Số Thứ Tự</th>
+            <th class="th-product" scope="col">Tên Sản Phẩm</th>
+            <th class="th-product" scope="col">Ảnh Sản Phẩm</th>
+            <th class="th-product" scope="col">ID</th>
+            <th class="th-product" scope="col">Giá Gốc</th>
+            <th class="th-product" scope="col">Giá Sale</th>
+            <th class="th-product" scope="col">Số Lượng</th>
+            <th class="th-product" scope="col">Giá Sản Phẩm</th>
+            <th class="th-product" scope="col">Thao Tác</th>
           </tr>
         </thead>
-        <tbody style="text-align: center;" id="cart-items">
+        <tbody class="table-product" style="text-align: center;" id="cart-items">
          
         </tbody>
         <tfoot class="table-foot" id="table-total-price" 
          style="text-align: center; font-weight: 700;background-color: burlywood;">
-        
+         
         </tfoot>
       </table>
 </body>

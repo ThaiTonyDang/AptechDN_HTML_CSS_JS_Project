@@ -1,137 +1,150 @@
 body {
-    width: 100%;
-    background-image:linear-gradient(to right bottom, #00158991,rgba(255, 255, 255, 0.831) 50%), url(../image/logo/chelsea-blue-blood.jpg);
-    background-size: cover;
+  width: 100%;
+  background-image: linear-gradient(
+      to right bottom,
+      #00158991,
+      rgba(255, 255, 255, 0.831) 50%
+    ),
+    url(../image/logo/chelsea-blue-blood.jpg);
+  background-size: cover;
 }
 .nav-fixed {
-    position: fixed;
-    width: 100%;
-    z-index: 3;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
 }
 .nav-header {
-    background-color: #001489;
-    background-image: linear-gradient(to right bottom, #001589f5,rgba(255, 255, 255, 0.533)),
+  background-color: #001489;
+  background-image: linear-gradient(
+      to right bottom,
+      #001589f5,
+      rgba(255, 255, 255, 0.533)
+    ),
     url("../image/logo/chelsea-blue-blood.jpg");
-    background-position: right;
-    background-size: cover;
+  background-position: right;
+  background-size: cover;
 }
 
 .navbar-brand {
-    font-weight: 700;
-    color: #001489;
+  font-weight: 700;
+  color: #001489;
 }
 
 .btn-outline-dark {
-    background-color: #001489;
-    color: white;
+  background-color: #001489;
+  color: white;
 }
 
 .btn:hover {
-    background-color: white;
-    color: #001489;
-    font-weight: 800;
+  background-color: white;
+  color: #001489;
+  font-weight: 800;
 }
 
-
-
 .nav-link {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .cart {
-    position: relative;
-    margin-left: 50px;
-    margin-left: 270px;
+  position: relative;
+  margin-left: 50px;
+  margin-left: 270px;
 }
 
 .cart-number {
-    position: absolute;
-    border-radius: 50%;
-    width: 1.3rem;
-    height: 1.3rem;
-    background-color: white;
-    color: black;
-    text-align: center;
-    font-size: 13px;
-    font-weight: 500;
-    top: 0px;
-    left: 20px;
+  position: absolute;
+  border-radius: 50%;
+  width: 1.3rem;
+  height: 1.3rem;
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  top: 0px;
+  left: 20px;
 }
 
 .opacity {
-    opacity: 0;
+  opacity: 0;
 }
 
 .hidden {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .cart-icon {
-   font-size: 20px;
+  font-size: 20px;
 }
 .btn:hover .cart-number {
-    background-color: #001489;
-    width: 1.5rem;
-    height: 1.5rem;
-    text-align: center;
-    color: white;
-    font-weight: 900;
-    font-size: 17px;
+  background-color: #001489;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  color: white;
+  font-weight: 900;
+  font-size: 17px;
 }
 .background-footer {
-    background-color: #001489;
-    background-image: linear-gradient(to right bottom, #001589aa,rgba(255, 255, 255, 0.774)), url(../image/logo/drobba_1.jfif);
-    background-position: center;
-    background-size: cover;
+  background-color: #001489;
+  background-image: linear-gradient(
+      to right bottom,
+      #001589aa,
+      rgba(255, 255, 255, 0.774)
+    ),
+    url(../image/logo/drobba_1.jfif);
+  background-position: center;
+  background-size: cover;
 }
 
 .link-page {
-    text-decoration: none;
-    color: white; 
+  text-decoration: none;
+  color: white;
 }
 
 .btn-outline-success {
-    background-color: #001489;
-    color: white;
+  background-color: #001489;
+  color: white;
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 .col {
-    background-image: 
-    linear-gradient(to right bottom, #001589d2,rgba(255, 255, 255, 0.299)), url(../image/logo/chelsea-legend.jpg);
+  background-image: linear-gradient(
+      to right bottom,
+      #001589d2,
+      rgba(255, 255, 255, 0.299)
+    ),
+    url(../image/logo/chelsea-legend.jpg);
 }
 
 .form-control {
-    width: 120%;
+  width: 120%;
 }
 
-
-
 .card-img-top:hover {
-   cursor: pointer;
-   border: 3px solid #001489;
-   margin-left: 10px;
-	-webkit-transform: scale(1.1);
-	transform: scale(1.1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+  cursor: pointer;
+  border: 3px solid #001489;
+  margin-left: 10px;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .product-type {
-    --c: no-repeat linear-gradient(#001489 0 0);
-    background: 
-      var(--c) calc(-100% + var(--i, 0) * 100%) 100% / 50% calc(100% * var(--i, 0) + .08em),
-      var(--c) calc( 200% - var(--i, 0) * 100%) 0 / 50% calc(100% * var(--i, 0) + .08em);
-    transition: .3s calc(var(--i, 0) * .3s), background-position .3s calc(.3s - var(--i, 0) * .3s);
+  --c: no-repeat linear-gradient(#001489 0 0);
+  background: var(--c) calc(-100% + var(--i, 0) * 100%) 100% / 50%
+      calc(100% * var(--i, 0) + 0.08em),
+    var(--c) calc(200% - var(--i, 0) * 100%) 0 / 50%
+      calc(100% * var(--i, 0) + 0.08em);
+  transition: 0.3s calc(var(--i, 0) * 0.3s),
+    background-position 0.3s calc(0.3s - var(--i, 0) * 0.3s);
 }
 
 .product-type:hover {
-    --i: 1;
-    color: white;
+  --i: 1;
+  color: white;
 }
-
-
-
