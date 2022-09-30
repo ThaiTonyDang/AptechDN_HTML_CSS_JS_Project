@@ -20,7 +20,7 @@ function rendCartProduct(cartProduct)
     <tr>
             <td>${ordinalNumber}</td>
             <td>${cartProduct.ProductName}</td>
-            <td ><img class="image-table" src="../image/product-image/${cartProduct.Image}" alt=""></td>
+            <td ><a href="./productDetail.html?id=${cartProduct.Id}" target="_blank"><img class="image-table" src="../image/product-image/${cartProduct.Image}" alt="">    </a></td>
             <td>${cartProduct.Id}</td>
             <td>${productOriginalPrice} </td>
             <td>${productSalePrice}  </td>

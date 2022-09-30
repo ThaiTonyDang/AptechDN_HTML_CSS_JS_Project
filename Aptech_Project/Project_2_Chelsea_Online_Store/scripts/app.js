@@ -1,4 +1,3 @@
-let cartArray = [];
 fetch("../data/dataListArray.json")
   .then((response) => {
     return response.json();
@@ -76,7 +75,9 @@ function rendProduct(product) {
               <div class="card-body p-4">
                 <div class="text-center">
                   <!-- Product name-->
-                  <h5 class="fw-bolder product-type">${getProductType(product.Type)}</h5>
+                  <h5 class="fw-bolder product-type">${getProductType(
+                    product.Type
+                  )}</h5>
                   <h6 class="name" >${product.ProductName}</h6>
                 
                   <div class="d-flex justify-content-center small text-warning mb-2" id="five-star">
@@ -116,12 +117,19 @@ function loadDataProductToHTML() {
   getCartNumber();
 }
 
+let cartArray = [];
+function getDataCartFromStorage() {
+  cartArray = localStorage.getItem("cartItem");
+  if (cartArray) return JSON.parse(cartArray);
+  return cartArray;
+}
 function getProductById(productArray, id) {
   let product = productArray.find((item) => item.Id == id);
   return product;
 }
 
 function getProductCartById(id) {
+  cartArray = getDataCartFromStorage();
   if (cartArray) {
     let productCart = cartArray.find((item) => item.Id == id);
     return productCart;
@@ -137,21 +145,18 @@ function addProductToCart(id) {
       productCart.Quantity += 1;
       return;
     }
-    if (cartArray == null) {
+
+    if (cartArray) {
       cartArray = [];
+      
     }
     cartArray.push(product);
+    
   }
 }
 
 function saveCart() {
   localStorage.setItem("cartItem", JSON.stringify(cartArray));
-}
-
-function getDataCartFromStorage() {
-  cartArray = localStorage.getItem("cartItem");
-  if (cartArray) return JSON.parse(cartArray);
-  return cartArray;
 }
 
 function hiddenVisibleCartNumber() {
