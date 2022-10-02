@@ -7,8 +7,15 @@ const PRODUCT_TYPE = {
 
 
 const PRODUCT_DESCRIPTION = {
-    News: "New Product",
-	Special: "Special Product",
-	Sale: "Sale Product",
-	Normal: "Normal Product"
+    News: "Sản Phẩm Mới",
+	Special: "Sản Phẩm Đặc Biệt",
+	Sale: "Sản Phẩm Đang Sale",
+	Normal: "Sản Phẩm Thường"
+}
+
+const OPERATOR_BUTTON = {
+	Minus: -1,
+	Delete: 0,
+	Plus: 1
+	
 }

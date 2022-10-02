@@ -123,3 +123,28 @@ function getCartNumber(cart) {
     result.innerText = parseInt(cart.length);
   }
 }
+
+function rendDisplayTable(productCart) {
+  let price = getPriceFormat(productCart.Price);
+  let rendTable = `<tr>
+                    <td>${productCart.ProductName}</td>
+                    <td><img class = "display-image" src="../image/product-image/${productCart.Image}" alt=""></td>
+                    <td>${productCart.Quantity}</td>
+                    <td>${price}</td>
+                   </tr> 
+                `;
+  return rendTable;              
+}
+
+function displayProductTable() {
+   let cart = getCartFromStorage();
+   let bodyTable = document.getElementById("table-product-rending");
+   bodyTable.innerHTML = "";
+   let render = "";
+   cart.forEach((productCart) => {
+    let itemRender = rendDisplayTable(productCart);
+    render += itemRender;
+   });
+
+   bodyTable.innerHTML = render;
+}

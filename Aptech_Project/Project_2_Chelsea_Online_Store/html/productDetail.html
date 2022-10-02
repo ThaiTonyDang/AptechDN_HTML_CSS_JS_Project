@@ -71,15 +71,38 @@
                 </ul>
               </li>
             </ul>
+            
             <form class="d-flex cart ">
-              <a href="./cart.html" target="_blank" class="cart btn btn-outline-dark " type="submit">
+              <a href="./cart.html" target="_blank" class="cart btn btn-outline-dark " type="submit"
+              onmouseover="displayProductTable()">
                 <i class="bi-cart-fill me-1 cart-icon"></i>
                 <div class="cart-number opacity hidden" id="cart__item-number"></div>
+                <table class="table table-hover table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Tên</th>
+                      <th scope="col">Ảnh Sản Phẩm</th>
+                      <th scope="col">Số Lượng</th>
+                      <th scope="col">Giá</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-product-rending">
+  
+                 </tbody>
+                </table>
               </a>
             </form>
           </div>
         </div>
       </nav>
+      <div class="card" style="width: 100%;">
+        <img src="../image/logo/drobba_1.jfif" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Chào Mừng Đến Với Chelsea Store</h5>
+          <p class="card-text">Lựa Chọn Đơn Hàng Mà Bạn Mong Muốn</p>
+          <a href="./chelsea-store-home-page.html" target="_blank" class="btn btn-primary">Trở Về Trang Chủ</a>
+        </div>
+      </div>  
     <!-- Product section-->
     <section class="py-5">
       <div class="container px-4 px-lg-5 my-5">

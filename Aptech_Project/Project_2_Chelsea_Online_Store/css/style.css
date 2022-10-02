@@ -148,3 +148,61 @@ body {
   --i: 1;
   color: white;
 }
+
+.bag-cart {
+  position: relative;
+  margin: auto;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.card-footer:hover .bag-cart {
+  opacity: 1;
+  visibility: visible;
+}
+
+.add-to-cart {
+  margin-left: 30px;
+  border: none;
+}
+
+table,tr,th,td {
+  border: 1px solid white;
+}
+
+.table-hover {
+  position: absolute;
+  width: 500px;
+  background-color: #00158994;
+  right: 20px;
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 4px;
+}
+
+.cart:hover .table-hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.display-image {
+  height: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
