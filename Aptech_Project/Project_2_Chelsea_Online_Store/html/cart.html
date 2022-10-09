@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="5"> <!-- refresh sau 5 s  -->
+    <title>Cart</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style_boostrap.css" />
+    <link rel="stylesheet" href="../css/cart.css" />
+  </head>
+  <body onload="rendToCart()">
+    <div class="card" style="width: 100%;">
+      <img src="../image/logo/drobba_1.jfif" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Chào Mừng Đến Với Chelsea Store</h5>
+        <p class="card-text">Lựa Chọn Đơn Hàng Mà Bạn Mong Muốn</p>
+        <a href="./chelsea-store-home-page.html" target="_blank" class="btn btn-primary">Trở Về Trang Chủ</a>
+      </div>
+    </div>
+    <table class="table table-hover table-bordered border-primary">
+      <thead class="table-dark">
+        <tr id="total-product-number"></tr>
+
+        <tr>
+          <th class="th-product number-ordinal" scope="col">Số Thứ Tự</th>
+          <th class="th-product" scope="col">Tên Sản Phẩm</th>
+          <th class="th-product" scope="col">Ảnh Sản Phẩm</th>
+          <th class="th-product" scope="col">Mã Sản Phẩm</th>
+          <th class="th-product" scope="col">Giá Gốc</th>
+          <th class="th-product" scope="col">Giá Sale</th>
+          <th class="th-product" scope="col">Số Lượng</th>
+          <th class="th-product" scope="col">Giá Sản Phẩm</th>
+          <th class="th-product" scope="col">Thao Tác</th>
+        </tr>
+      </thead>
+      <tbody
+        class="table-product"
+        style="text-align: center"
+        id="cart-items"
+      ></tbody>
+      <tfoot
+        class="table-foot"
+        id="table-total-price"
+        style="
+          text-align: center;
+          font-weight: 700;
+          background-color: burlywood;
+        "
+      ></tfoot>
+    </table>
+    <script src="../scripts/jquery-3.6.1.min.js"></script>
+    <script src="../scripts/consts.js"></script>
+    <script src="../scripts/cart.js"></script>
+  </body>
+</html>
