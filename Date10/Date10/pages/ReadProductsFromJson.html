@@ -120,10 +120,6 @@
 
     function InitAddToCartEvent(productList) {
         var addToCartBtns = document.getElementsByClassName("add-to-cart");
-        // for (var i = 0; i < addToCartBtns.length; i++) {
-        //     console.log(addToCartBtns[i]);
-        // }
-
         Array.from(addToCartBtns).forEach(btn => {
             btn.addEventListener("click", function () {
                 let id = btn.getAttribute("data-id");
